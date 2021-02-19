@@ -11,12 +11,10 @@ public class Actions {
     private int EffMil;
     private int EffEco;
     private int EffNat;
-    private int EffLoy;
-    private int EffBank;
-    private int EffIndu;
-    private int EffAgri;
+    private float EffLoy;
+    private int EffFood;
 
-    public Actions(String name, float amount, int effCap, int effCom, int effLib, int effRel, int effMil, int effEco, int effNat, int effLoy, int effBank, int effIndu, int effAgri) {
+    public Actions(String name, float amount, int effCap, int effCom, int effLib, int effRel, int effMil, int effEco, int effNat, float effLoy, int EffFood) {
         this.name = name;
         this.amount = amount;
         this.EffCap = effCap;
@@ -27,8 +25,6 @@ public class Actions {
         this.EffEco = effEco;
         this.EffNat = effNat;
         this.EffLoy = effLoy;
-        this.EffBank = effBank;
-        this.EffIndu = effIndu;
-        this.EffAgri = effAgri;
+        this.EffFood = EffFood;
     }
 }

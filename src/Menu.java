@@ -14,46 +14,56 @@ public class Menu {
                             "à un maximum d'évènements divers et variés. \n");
     }
 
-    public static void initializePresident(){
+    public static void initializeCountry(){
         Scanner scanner = new Scanner (System.in);
         System.out.println("Comment voulez-vous que le peuple s'addresse à vous ?");
         String presidentName = scanner.nextLine();
         System.out.println("Et comment s'appelle votre pays ?");
         String countryName = scanner.nextLine();
+        int money = 200;
     }
 
     public static void choiceLevel(){
+        Scanner scanner = new Scanner(System.in);
+        int level = 0;
+        float difficulty;
+        Boolean choiceDifficulty = false;
+
         System.out.println("Choissisez le niveau de difficulté :");
         System.out.println("Tappez 1 pour la difficulté FACILE");
         System.out.println("Tappez 2 pour la difficulté NORMAL");
         System.out.println("Tappez 3 pour la difficulté DIFFICILE");
 
-        Scanner scanner = new Scanner (System.in);
-        int choice = scanner.nextInt();
+        while (!choiceDifficulty) {
+        level = scanner.nextInt();
 
-        switch (choice) {
-            case 1:
-                System.out.println("Difficulté FACILE confirmée.");
-                break;
-            case 2:
-                System.out.println("Difficulté NORMAL confirmée.");
-                break;
-            case 3:
-                System.out.println("Difficulté DIFFICILE confirmée.");
-                break;
-            default:
-                System.out.println("Sélectionnez un niveau de difficulté proposé.");
+            switch (level) {
+                case 1:
+                    System.out.println("Difficulté FACILE confirmée.");
+                    difficulty = 0.5f;
+                    choiceDifficulty = true;
+                    break;
+                case 2:
+                    System.out.println("Difficulté NORMAL confirmée.");
+                    difficulty =1;
+                    choiceDifficulty = true;
+                    break;
+                case 3:
+                    System.out.println("Difficulté DIFFICILE confirmée.");
+                    difficulty = 2;
+                    choiceDifficulty = true;
+                    break;
+                default:
+                    System.out.println("Sélectionnez un niveau entre 1 et 3.");
+                    choiceDifficulty = false;
+            }
         }
-    }
-
-    public static void randomEvents(){
-
     }
 
 
     public static void mainFunction(){
         startMenu();
-        initializePresident();
+        initializeCountry();
         choiceLevel();
     }
 }

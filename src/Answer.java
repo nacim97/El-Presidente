@@ -1,6 +1,6 @@
 package src;
 
-public class Answer {
+public class Answer extends Event{
     private String text;
     private int EffCap;
     private int EffCom;
