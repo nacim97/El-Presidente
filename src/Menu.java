@@ -54,7 +54,7 @@ public class Menu {
                     choiceDifficulty = true;
                     break;
                 default:
-                    System.out.println("Sélectionnez un niveau entre 1 et 3.");
+                    System.out.println("Ce niveau n'existe pas, sélectionnez un niveau entre 1 et 3.");
                     choiceDifficulty = false;
             }
         }
