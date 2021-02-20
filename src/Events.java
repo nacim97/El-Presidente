@@ -30,4 +30,5 @@ public enum Events {
     }
     public String getDonnees(){return this.donnees;}
     public int getconstraint(){return this.constraint;}
+
     }
