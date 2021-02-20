@@ -22,12 +22,12 @@ public enum Events {
     NINETEEN("Votre premier ministre est accusé de détournement de fond public, le peuple n'a pas encore écho de cette information :", 0),
     TWENTY("Votre pays est sélectionné pour organiser les prochains Jeux Olympiques :", 0);
 
-    private final String donnees;
+    private final String Specs;
     private final int constraint;
-    Events(String donnees, int constraint){
-        this.donnees = donnees;
+    Events(String Specs, int constraint){
+        this.Specs = Specs;
         this.constraint = constraint;
     }
-    public String getDonnees(){return this.donnees;}
+    public String getSpecs(){return this.Specs;}
     public int getconstraint(){return this.constraint;}
-    }
+}
