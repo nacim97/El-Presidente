@@ -96,7 +96,5 @@ public enum Answers {
     public int getEffNat(){return this.EffNat;}
     public int getEffLoy(){return this.EffLoy;}
     public int getEffBank(){return this.EffBank;}
-    public int getEffIndu(){return this.EffIndu;}
-    public int getEffAgri(){return this.EffAgri;}
     }
 

@@ -13,54 +13,12 @@ public class Country {
         this.name = name;
         this.value = value;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getValue() {
         return value;
     }
-
     public int setValue(int value) {
         this.value = value;
         return value;
-    }
-
-    public static Country getIndu() {
-        return Indu;
-    }
-
-    public static void setIndu(Country indu) {
-        Indu = indu;
-    }
-
-    public static Country getAgri() {
-        return Agri;
-    }
-
-    public static void setAgri(Country agri) {
-        Agri = agri;
-    }
-
-    public static Country getTresor() {
-        return Tresor;
-    }
-
-    public static void setTresor(Country tresor) {
-        Tresor = tresor;
-    }
-
-    public static Country getFood() {
-        return Food;
-    }
-
-    public static void setFood(Country food) {
-        Food = food;
     }
 }
 

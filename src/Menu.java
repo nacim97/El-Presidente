@@ -1038,7 +1038,7 @@ public class Menu {
                 break;
             case 17:
                 if(seventeen.getAlused() == 0 && (seventeen.getconstraint() != seas)) {
-                    System.out.println("Vous apprenez qu"+seventeen.getSpecs() + "\n");
+                    System.out.println("Vous apprenez qu'"+seventeen.getSpecs() + "\n");
                     System.out.print(seventeenone.getText());
                     System.out.println("(Capitaliste : " + seventeenone.getEffCap() + " | Communiste : " + seventeenone.getEffCom() + " | Libéraux : " + seventeenone.getEffLib() + " | Religieux : " + seventeenone.getEffRel() + " | Militariste : " + seventeenone.getEffMil() + " | Ecologiste : " + seventeenone.getEffEco() + " | Nationaliste : " + seventeenone.getEffNat() + " | Loyaliste : " + seventeenone.getEffLoy() + " )\n");
                     System.out.print(seventeentwo.getText());
@@ -1456,7 +1456,7 @@ public class Menu {
         if(seas == 4){
             while(action(president, country)){}
             EndYear();
-            Miammiam(president, country);
+            FoodUsed(president, country);
             scanner.nextLine();
             return 1;
         }else seas++;
@@ -1485,9 +1485,9 @@ public class Menu {
     public static void EndYear(){
         int naissance =0;
         System.out.println("Voilà la fin de la l'année ! vos terrains en Industrialisation vous ont permis de gagner " + (Indu.getValue()*10) + "€");
-        System.out.println("Votre agriculture a généré " + (Agri.getValue() *10) + " unités de nourriture");
+        System.out.println("Votre agriculture a généré " + (Agri.getValue() *40) + " unités de nourriture");
         Tresor.setValue(Tresor.getValue() + (Indu.getValue() * 10));
-        Food.setValue(Food.getValue() + (Agri.getValue() * 10));
+        Food.setValue(Food.getValue() + (Agri.getValue() * 40));
         if(Agri.getValue()>Indu.getValue()) {
             Random nbbirth = new Random();
             float birth = nbbirth.nextInt(10 - 1);
@@ -1527,16 +1527,16 @@ public class Menu {
         }
     }
 
-    public static void Miammiam(String president, String country){
+    public static void FoodUsed(String president, String country){
         int deadppl=0;
         int popMonde = (Capitaliste.getPartisans()+ Communiste.getPartisans()+ Liberaux.getPartisans()+
                 Religieux.getPartisans()+ Militariste.getPartisans()+ Ecologiste.getPartisans()+ Nationaliste.getPartisans()
                 + Loyaliste.getPartisans());
         System.out.println("votre population est constituée de " + popMonde+ "Personnes");
         System.out.println("Ils ont consommé 4 unités de nourriture chacun pendant l'année, ce qui fait un total de " + (popMonde*4) + " unités de nourriture.");
-        System.out.println(Food.getValue());
+        System.out.println("Stock initial : " + Food.getValue());
         Food.setValue(Food.getValue() - (4*popMonde));
-        System.out.println(Food.getValue());
+        System.out.println("Stock final : " +Food.getValue());
         if(Food.getValue()<0) {
             while (Food.getValue() < 0) {
                 Food.setValue(Food.getValue() + 4);
@@ -1687,23 +1687,5 @@ public class Menu {
         }
     }
 
-    public static void mainFunction(){
-        Scanner scanner = new Scanner (System.in);
-        int seasons =1, EndGame =0;
-        startMenu();
-        String president = initializePresident();
-        String country = initializeCountry();
-        float difficulty = choiceLevel();
-        while(loosecondition(difficulty) && EndGame <20) {
-            if(randomEvents(seasons)){
-                viewUpdate(president, country);
-                seasons = season(seasons, president, country);
-                repartition();
-                checkValueSat();
-                getdown();
-                EndGame++;
-            }
 
-        }
-    }
 }
