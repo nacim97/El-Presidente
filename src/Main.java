@@ -8,13 +8,13 @@ public class Main {
 
         //add factions
         //Factions capitaliste = new Factions("Capitaliste",50, 15);
-        Factions commmmuniste = new Factions("Commmmuniste",50, 15);
-        Factions liberaux = new Factions("Libéraux",50, 15);
-        Factions religieux = new Factions("Religieux",50, 15);
-        Factions militariste = new Factions("Militariste",50, 15);
-        Factions ecologiste = new Factions("Ecologiste",50, 15);
-        Factions nationaliste = new Factions("Nationaliste",50, 15);
-        Factions loyaliste = new Factions("Loyaliste",100, 15);
+        Factions commmmuniste = new Factions("Commmmuniste",50, 15, 0);
+        Factions liberaux = new Factions("Libéraux",50, 15, 0);
+        Factions religieux = new Factions("Religieux",50, 15,0);
+        Factions militariste = new Factions("Militariste",50, 15,0);
+        Factions ecologiste = new Factions("Ecologiste",50, 15,0);
+        Factions nationaliste = new Factions("Nationaliste",50, 15,0);
+        Factions loyaliste = new Factions("Loyaliste",100, 15,0);
 
         //add actions
         Actions goldCapitaliste = new Actions("Pot de vin : Capitaliste",15,10,0,0,0,0,0,0,0,0);

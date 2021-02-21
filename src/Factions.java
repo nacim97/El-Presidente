@@ -5,19 +5,21 @@ public class Factions {
     private String name;
     private int satisfaction;
     private int partisans;
-    public static Factions capitaliste = new Factions("Capitaliste",50, 15);
-    public static Factions communiste = new Factions("Communiste",50, 15);
-    public static Factions liberaux = new Factions("Libéraux",50, 15);
-    public static Factions religieux = new Factions("Religieux",50, 15);
-    public static Factions militariste = new Factions("Militariste",50, 15);
-    public static Factions ecologiste = new Factions("Ecologiste",50, 15);
-    public static Factions nationaliste = new Factions("Nationaliste",50, 15);
-    public static Factions loyaliste = new Factions("Loyaliste",100, 15);
+    private int down;
+    public static Factions capitaliste = new Factions("Capitaliste",50, 15, 0);
+    public static Factions communiste = new Factions("Communiste",50, 15,0);
+    public static Factions liberaux = new Factions("Libéraux",50, 15,0);
+    public static Factions religieux = new Factions("Religieux",50, 15,0);
+    public static Factions militariste = new Factions("Militariste",50, 15,0);
+    public static Factions ecologiste = new Factions("Ecologiste",50, 15,0);
+    public static Factions nationaliste = new Factions("Nationaliste",50, 15,0);
+    public static Factions loyaliste = new Factions("Loyaliste",100, 15,0);
 
-    public Factions(String name, int satisfaction, int partisans) {
+    public Factions(String name, int satisfaction, int partisans, int down) {
         this.name = name;
         this.satisfaction = satisfaction;
         this.partisans = partisans;
+        this.down = down;
     }
 
     public String getName() {
@@ -42,5 +44,9 @@ public class Factions {
 
     public void setPartisans(int partisans) {
         this.partisans = partisans;
+    }
+    public int getDown(){return down;}
+    public void setDown(int down){
+        this.down = down;
     }
 }
