@@ -263,12 +263,13 @@ public class Menu {
 
         switch (value) {
             case 1:
-                System.out.println(one.getSpecs());
-                System.out.println(oneone.getText());
+                System.out.println(one.getSpecs() + "\n");
+                System.out.print(oneone.getText());
+                System.out.println("(Capitaliste : " + oneone.getEffCap() + " | Religieux : " + oneone.getEffRel() + " | Militariste : " + oneone.getEffMil() + ")\n");
                 System.out.print(onetwo.getText());
-                System.out.print("(Capitaliste : " + onetwo.getEffCap() + " | Communiste : " + onetwo.getEffCom() + " | Libéraliste : " +onetwo.getEffLib() + " | Religieux : " + onetwo.getEffRel() + ")");
+                System.out.println("(Capitaliste : " + onetwo.getEffCap() + " | Communiste : " + onetwo.getEffCom() + " | Libéraliste : " +onetwo.getEffLib() + " | Religieux : " + onetwo.getEffRel() + ")\n");
                 System.out.print(onethree.getText());
-                System.out.print("(Capitaliste : " +onethree.getEffCap() + " | Communiste : " + onethree.getEffCom() + " | Libéraliste : " + onethree.getEffLib() + " | Religieux : " + onethree.getEffRel() + ")");
+                System.out.println("(Capitaliste : " +onethree.getEffCap() + " | Communiste : " + onethree.getEffCom() + " | Libéraliste : " + onethree.getEffLib() + " | Religieux : " + onethree.getEffRel() + ")\n");
                 System.out.println("Quel scénario sélectionnez vous ?");
 
                 Boolean choicevalueScenario = false;
