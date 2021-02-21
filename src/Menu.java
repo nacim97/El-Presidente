@@ -1,5 +1,6 @@
 package src;
 
+import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -99,6 +100,12 @@ public class Menu {
     private static Answers twentytwo = Answers.twentytwo;
     private static Answers twentythree = Answers.twentythree;
 
+    private static Country Agri = Country.Agri;
+    private static Country Indu = Country.Indu;
+    private static Country Tresor = Country.Tresor;
+    private static Country Food = Country.Food;
+
+
     public static void startMenu() {
         System.out.println("--------------------------------------------------------------------------------------");
         System.out.println("|                          Bienvenue dans El-Presidente !                            |");
@@ -109,12 +116,18 @@ public class Menu {
                 "à un maximum d'évènements divers et variés. \n");
     }
 
-    public static void initializeCountry(){
+    public static String initializePresident(){
         Scanner scanner = new Scanner (System.in);
         System.out.println("Comment voulez-vous que le peuple s'addresse à vous ?");
         String presidentName = scanner.nextLine();
+        return presidentName;
+    }
+
+    public static String initializeCountry(){
+        Scanner scanner = new Scanner (System.in);
         System.out.println("Et comment s'appelle votre pays ?");
         String countryName = scanner.nextLine();
+        return countryName;
     }
 
     public static float choiceLevel(){
@@ -281,34 +294,119 @@ public class Menu {
                 System.out.println(twenty.getSpecs());
                 break;
         }
-
-        /*    demande de choix du joueur
-                            affichage des diffents impacts du choix (conclusion updated)*/
-
-
     }
 
-    public void viewUpdate(){
-        System.out.println("Vos statistiques actuelles : ");
-        System.out.println("Capitaliste : Satisfaction = " + Capitaliste.getSatisfaction() + ", Partisans = " + Capitaliste.getPartisans());
-        System.out.println("Communiste : Satisfaction = " + Communiste.getSatisfaction() + ", Partisans = " + Communiste.getPartisans());
-        System.out.println("Libéraux : Satisfaction = " + Liberaux.getSatisfaction() + ", Partisans = " + Liberaux.getPartisans());
-        System.out.println("Religieux : Satisfaction = " + Religieux.getSatisfaction() + ", Partisans = " + Religieux.getPartisans());
-        System.out.println("Militariste : Satisfaction = " + Militariste.getSatisfaction() + ", Partisans = " + Militariste.getPartisans());
-        System.out.println("Ecologiste : Satisfaction = " + Ecologiste.getSatisfaction() + ", Partisans = " + Ecologiste.getPartisans());
-        System.out.println("Nationaliste : Satisfaction = " + Nationaliste.getSatisfaction() + ", Partisans = " + Nationaliste.getPartisans());
-        System.out.println("Loyaliste : Satisfaction = " + Loyaliste.getSatisfaction() + ", Partisans = " + Loyaliste.getPartisans());
+    public static void viewUpdate(String president, String country){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Tappez entrer pour visualiser les impacts.");
+        scanner.nextLine();
 
-        System.out.println("L'Agriculture représente " );
+        System.out.println("Vos statistiques actuelles : ");
+        System.out.print("Capitaliste : Satisfaction = " + Capitaliste.getSatisfaction() + ", Partisans = " + Capitaliste.getPartisans());
+        System.out.println(" || Communiste : Satisfaction = " + Communiste.getSatisfaction() + ", Partisans = " + Communiste.getPartisans());
+        System.out.print("Libéraux : Satisfaction = " + Liberaux.getSatisfaction() + ", Partisans = " + Liberaux.getPartisans());
+        System.out.println(" || Religieux : Satisfaction = " + Religieux.getSatisfaction() + ", Partisans = " + Religieux.getPartisans());
+        System.out.print("Militariste : Satisfaction = " + Militariste.getSatisfaction() + ", Partisans = " + Militariste.getPartisans());
+        System.out.println(" || Ecologiste : Satisfaction = " + Ecologiste.getSatisfaction() + ", Partisans = " + Ecologiste.getPartisans());
+        System.out.print("Nationaliste : Satisfaction = " + Nationaliste.getSatisfaction() + ", Partisans = " + Nationaliste.getPartisans());
+        System.out.println(" || Loyaliste : Satisfaction = " + Loyaliste.getSatisfaction() + ", Partisans = " + Loyaliste.getPartisans());
+
+        System.out.println("\nL'Agriculture représente " + Agri.getValue() + "% de " + country + ".");
+        System.out.println("L'Industrialisation représente " + Indu.getValue() + "% de " + country + ".");
+        System.out.println(president + " possède " + Tresor.getValue() + "€.");
+    }
+
+    public static void Action(){
+        Scanner scanner = new Scanner(System.in);
+        int choice = 0;
+        int valueTresor = 0;
+        int valueFood = 0;
+
+        System.out.println("Choissisez l'action que vous souhaitez effectuer : ");
+        System.out.println("1 : Verser un pot de vin à la faction de votre choix (15€/partisans , +10% de satisfaction [Faction] , Baisse de satisfaction chez [Loyaliste]).");
+        System.out.println("2 : Acheter de la nourriture.");
+        System.out.println("3 : Afficher les statistiques.");
+        System.out.println("4 : Rien.");
+
+        choice = scanner.nextInt();
+
+        switch (choice){
+            case 1 :
+                System.out.println("Vous avez choisi de verser un pot de vin.\n");
+                System.out.println("Choix de la faction :");
+                System.out.println("1. Capitaliste.");
+                System.out.println("2. Communiste.");
+                System.out.println("3. Libéraux.");
+                System.out.println("4. Religieux.");
+                System.out.println("5. Militariste.");
+                System.out.println("6. Ecologiste.");
+                System.out.println("7. Nationaliste.");
+                System.out.println("Les loyalistes vous sont déjà loyaux.");
+
+                choice = scanner.nextInt();
+
+                switch (choice) {
+                    case 1:
+                        Capitaliste.setSatisfaction(Capitaliste.getSatisfaction() + 10);
+                        valueTresor = Capitaliste.getPartisans() * 15;
+                        Tresor.setValue(Tresor.getValue() - valueTresor);
+                        Loyaliste.setSatisfaction(Loyaliste.getSatisfaction() - (valueTresor / 10));
+                        System.out.println("Pot de vin versé aux Capitaliste.\n" + "Satifaction des Capitalistes : " + Capitaliste.getSatisfaction() + ", cela vous a coûter  " + valueTresor + "€.");
+                        break;
+                    case 2:
+                        Communiste.setSatisfaction(Communiste.getSatisfaction() + 10);
+                        valueTresor = Communiste.getPartisans() * 15;
+                        Tresor.setValue(Tresor.getValue() - valueTresor);
+                        Loyaliste.setSatisfaction(Loyaliste.getSatisfaction() - (valueTresor / 10));
+                        System.out.println("Pot de vin versé aux Capitaliste.");
+                        break;
+                    case 3:
+                        Liberaux.setSatisfaction(Liberaux.getSatisfaction() + 10);
+                        valueTresor = Liberaux.getPartisans() * 15;
+                        Tresor.setValue(Tresor.getValue() - valueTresor);
+                        Loyaliste.setSatisfaction(Loyaliste.getSatisfaction() - (valueTresor / 10));
+                        break;
+                    case 4:
+                        Religieux.setSatisfaction(Religieux.getSatisfaction() + 10);
+                        valueTresor = Religieux.getPartisans() * 15;
+                        Tresor.setValue(Tresor.getValue() - valueTresor);
+                        Loyaliste.setSatisfaction(Loyaliste.getSatisfaction() - (valueTresor / 10));
+                        break;
+                    case 5:
+                        Militariste.setSatisfaction(Militariste.getSatisfaction() + 10);
+                        valueTresor = Militariste.getPartisans() * 15;
+                        Tresor.setValue(Tresor.getValue() - valueTresor);
+                        Loyaliste.setSatisfaction(Loyaliste.getSatisfaction() - (valueTresor / 10));
+                        break;
+                    case 6:
+                        Ecologiste.setSatisfaction(Ecologiste.getSatisfaction() + 10);
+                        valueTresor = Ecologiste.getPartisans() * 15;
+                        Tresor.setValue(Tresor.getValue() - valueTresor);
+                        Loyaliste.setSatisfaction(Loyaliste.getSatisfaction() - (valueTresor / 10));
+                        break;
+                    case 7:
+                        Nationaliste.setSatisfaction(Nationaliste.getSatisfaction() + 10);
+                        valueTresor = Nationaliste.getPartisans() * 15;
+                        Tresor.setValue(Tresor.getValue() - valueTresor);
+                        Loyaliste.setSatisfaction(Loyaliste.getSatisfaction() - (valueTresor / 10));
+                        break;
+                    default:
+                }
+            case 2 :
+                System.out.println("Combien de ration de nourriture voulez-vous acheter ? (8€ / ration)" );
+                System.out.println("Stock actuel : " + Food.getValue() + " rations et " + Tresor.getValue() + "€.");
+                valueFood = scanner.nextInt();
+
+        }
     }
 
     public static void mainFunction(){
-
         startMenu();
-        initializeCountry();
+        String president = initializePresident();
+        String country = initializeCountry();
         float difficulty = choiceLevel();
         randomEvents();
-
+        viewUpdate(president,country);
         System.out.println("");
 
     }
