@@ -35,9 +35,9 @@ public enum Answers {
     twelveone("1 : vous lancez une campagne de sensibilisation + aide de l'état.", -15,15,15,15,15,15,15,15,0,0,0),
     twelvetwo("2 : vous lancez une campagne de sensibilisation.", -15,15,15,15,15,15,15,15,0,0,0),
     twelvethree("3 : la problématique n'est pas assez importante pour être traité par l'état.", 0,12,12,0,0,0,12,0,0,0,0),
-    thirteenone("1 : vous refusez, la recherche spatiale n'est pas une priorité pour votre pays.", -10,0,0,14,0,15,0,0,0,0,0),
-    thirteentwo("2 : vous acceptez.", 12,-11,0,0,0,0,-11,0,0,0,0),
-    thirteenthree("3 : vous acceptez mais sous condition de possession des propriétées intellectuels.", -8,0,0,0,10,0,0,10,0,0,0),
+    thirdteenone("1 : vous refusez, la recherche spatiale n'est pas une priorité pour votre pays.", -10,0,0,14,0,15,0,0,0,0,0),
+    thirdteentwo("2 : vous acceptez.", 12,-11,0,0,0,0,-11,0,0,0,0),
+    thirdteenthree("3 : vous acceptez mais sous condition de possession des propriétées intellectuels.", -8,0,0,0,10,0,0,10,0,0,0),
     fourteenone("1 : vous mettez un place un plan de sécurisation tout autour des infrastructures menacées.",0,-14,-14,0,0,0,12,12,0,0,0),
     fourteentwo("2 : vous pensez pas que le risque est réel, vous restez passif face à la situation.", 0,-15,-13,0,0,0,-13,0,0,0,0),
     fourteenthree("3 : vous lancez un campagne de sensibilisation express alertante la poulation à faire attention et à se préparer à partir.", 0,0,0,12,0,12,12,12,0,0,0),
@@ -49,21 +49,9 @@ public enum Answers {
     seventeenone("1 : vous faites appel au calme et invitez chacun des représentants à la discution autour d'une table.", 25,-15,25,15,25,-15,25,-15,0,0,0),
     seventeentwo("2 : vous faites partie de la factions militaire, vous mettez en place une dictature militaire.", -25,-25,-25,-25,30,-25,-25,-25,0,0,0),
     seventeenthree("3 : vous proposez la répartition equitable du pays en 8 factions et à chaque partie son dirigeant.", -20,25,-20,25,25,25,25,-20,0,0,0),
-
-
-
-
-
-
-
     eighteenone("1 : vous vous représentez pour un nouveau mandat.", 0,0,0,0,0,-12,0,15,0,0,0),
     eighteentwo("2 : vous prenez votre retraite politique.", 13,13,13,0,13,0,0,-12,0,0,0),
     eighteenthree("3 : vous ne comptez pas lâcher votre trône et vous auto-proclamez nouveau président.", -20,-20,-20,-20,-20,-20,-20,20,0,0,0),
-
-
-
-
-
     nineteenone("1 : vous trouvez une solution pour étouffer l'affaire et le destitué de ses fonctions.", 12,12,-14,-14,0,0,0,0,12,0,0),
     nineteentwo("2 : vous rendez l'histoire public et désignez un nouveau premier ministre.", -18,17,17,17,17,17,17,17,0,0,0),
     nineteenthree("3 : vous êtes complice, vous étouffez l'histoire.",-25,-25,-25,-25,-25,-25,-25,-25,0,0,0),

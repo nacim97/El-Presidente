@@ -20,9 +20,6 @@ public class Factions {
         this.partisans = partisans;
     }
 
-    public Factions(String name, int satisfaction) {
-    }
-
     public String getName() {
         return name;
     }
