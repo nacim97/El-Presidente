@@ -316,13 +316,13 @@ public class Menu {
         System.out.println(president + " possède " + Tresor.getValue() + "€.");
     }
 
-    public static void Action(){
+    public static void action(){
         Scanner scanner = new Scanner(System.in);
         int choice = 0;
         int valueTresor = 0;
         int valueFood = 0;
 
-        System.out.println("Choissisez l'action que vous souhaitez effectuer : ");
+        System.out.println("\nChoissisez l'action que vous souhaitez effectuer : ");
         System.out.println("1 : Verser un pot de vin à la faction de votre choix (15€/partisans , +10% de satisfaction [Faction] , Baisse de satisfaction chez [Loyaliste]).");
         System.out.println("2 : Acheter de la nourriture.");
         System.out.println("3 : Afficher les statistiques.");
@@ -341,7 +341,6 @@ public class Menu {
                 System.out.println("5. Militariste.");
                 System.out.println("6. Ecologiste.");
                 System.out.println("7. Nationaliste.");
-                System.out.println("Les loyalistes vous sont déjà loyaux.");
 
                 choice = scanner.nextInt();
 
@@ -352,6 +351,7 @@ public class Menu {
                         Tresor.setValue(Tresor.getValue() - valueTresor);
                         Loyaliste.setSatisfaction(Loyaliste.getSatisfaction() - (valueTresor / 10));
                         System.out.println("Pot de vin versé aux Capitaliste.\n" + "Satifaction des Capitalistes : " + Capitaliste.getSatisfaction() + ", cela vous a coûter  " + valueTresor + "€.");
+                        System.out.println("Loyaliste satisfaction :" + Loyaliste.getSatisfaction());
                         break;
                     case 2:
                         Communiste.setSatisfaction(Communiste.getSatisfaction() + 10);
@@ -391,12 +391,31 @@ public class Menu {
                         Loyaliste.setSatisfaction(Loyaliste.getSatisfaction() - (valueTresor / 10));
                         break;
                     default:
+                        System.out.println("Faites un choix parmis les factions disponibles.");
                 }
+                break;
             case 2 :
                 System.out.println("Combien de ration de nourriture voulez-vous acheter ? (8€ / ration)" );
                 System.out.println("Stock actuel : " + Food.getValue() + " rations et " + Tresor.getValue() + "€.");
-                valueFood = scanner.nextInt();
 
+                do{
+                    valueFood = scanner.nextInt();
+                    if (valueFood > 0) {
+                        Food.setValue(Food.getValue()+valueFood);
+                        System.out.println("Nouveau stock : " + Food.getValue() + " et le reste dans la trésorerie est de: " + Tresor.setValue(Tresor.getValue()-(valueFood*8)));
+                    } else {
+                        System.out.println("Entrez une valeur supérieur à 0");
+                    }
+                } while (valueFood <= 0);
+                break;
+            case 3 :
+                System.out.println("Ration en stock : " + Food.getValue());
+                System.out.println("Trésorerie : " + Tresor.getValue());
+                break;
+            case 4 :
+                return;
+            default:
+                System.out.println("Prenez une décision parmis les choix disponibles.");
         }
     }
 
@@ -407,7 +426,6 @@ public class Menu {
         float difficulty = choiceLevel();
         randomEvents();
         viewUpdate(president,country);
-        System.out.println("");
-
+        action();
     }
 }
