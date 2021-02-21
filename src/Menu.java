@@ -265,9 +265,9 @@ public class Menu {
                 System.out.println(one.getSpecs());
                 System.out.println(oneone.getText());
                 System.out.print(onetwo.getText());
-                System.out.print("(Capitaliste : " + onetwo.getEffCap());System.out.print(" | Communiste : " + onetwo.getEffCom());System.out.print(" | Libéraliste : " +onetwo.getEffLib());System.out.println(" | Religieux : " + onetwo.getEffRel() + ")");
+                System.out.print("(Capitaliste : " + onetwo.getEffCap() + " | Communiste : " + onetwo.getEffCom() + " | Libéraliste : " +onetwo.getEffLib() + " | Religieux : " + onetwo.getEffRel() + ")");
                 System.out.print(onethree.getText());
-                System.out.print("(Capitaliste : " +onethree.getEffCap());System.out.print(" | Communiste : " + onethree.getEffCom());System.out.print(" | Libéraliste : " + onethree.getEffLib());System.out.println(" | Religieux : " + onethree.getEffRel() + ")");
+                System.out.print("(Capitaliste : " +onethree.getEffCap() + " | Communiste : " + onethree.getEffCom() + " | Libéraliste : " + onethree.getEffLib() + " | Religieux : " + onethree.getEffRel() + ")");
                 System.out.println("Quel scénario sélectionnez vous ?");
 
                 Boolean choicevalueScenario = false;
