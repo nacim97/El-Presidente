@@ -312,8 +312,6 @@ public class Menu {
                                 System.out.println("Choix scénario 1 : Validé.");
                                 Capitaliste.setSatisfaction(Capitaliste.getSatisfaction() + threeone.getEffCap());
                                 Religieux.setSatisfaction(Religieux.getSatisfaction() + threeone.getEffRel());
-                                //les calculs
-                                // affichage résumé / impacts des calculs
                                 choicevalueScenario = true;
                                 break;
                             case 2:
@@ -333,7 +331,7 @@ public class Menu {
                                 choicevalueScenario = true;
                                 break;
                             default:
-                                System.out.println("Choissiez parmis les scénarios disponible.");
+                                System.out.println("Choississez parmis les scénarios disponible.");
                                 choicevalueScenario = false;
                         }
 
@@ -364,8 +362,6 @@ public class Menu {
                                 Ecologiste.setSatisfaction(Ecologiste.getSatisfaction() + fourone.getEffEco());
                                 Nationaliste.setSatisfaction(Nationaliste.getSatisfaction() + fourone.getEffNat());
                                 Loyaliste.setSatisfaction(Loyaliste.getSatisfaction() + fourone.getEffLoy());
-                                //les calculs
-                                // affichage résumé / impacts des calculs
                                 choicevalueScenario = true;
                                 break;
                             case 2:
@@ -448,35 +444,19 @@ public class Menu {
                     System.out.println(six.getSpecs() + "\n");
                     System.out.print(sixone.getText());
                     System.out.println("(Capitaliste : " + sixone.getEffCap() + " | Communiste : " + sixone.getEffCom() + " | Libéraux : " + sixone.getEffLib() + " | Religieux : " + sixone.getEffRel() + " | Militant : " + sixone.getEffMil() + " | Ecologiste : " + sixone.getEffEco() + " | Nationaliste : " + sixone.getEffNat() + " | Loyaliste : " + sixone.getEffLoy() + ")\n");
+                    System.out.println("Un seul choix de scénario est possible, appuyez sur entrée pour continuer");
                     scanner.nextLine();
-                    choicevalueScenario = false;
-
-                    while (!choicevalueScenario) {
-                        valueScenario = scanner.nextInt();
-                        switch (valueScenario) {
-                            case 1:
-                                System.out.println("Choix scénario 1 : Validé.");
-                                Capitaliste.setSatisfaction(Capitaliste.getSatisfaction() + twoone.getEffCap());
-                                Communiste.setSatisfaction(Communiste.getSatisfaction() + twotwo.getEffCom());
-                                Liberaux.setSatisfaction(Liberaux.getSatisfaction() + twoone.getEffLib());
-                                Religieux.setSatisfaction(Religieux.getSatisfaction() + twoone.getEffRel());
-                                Militariste.setSatisfaction(Militariste.getSatisfaction() + twoone.getEffMil());
-                                Ecologiste.setSatisfaction(Ecologiste.getSatisfaction() + twoone.getEffEco());
-                                Nationaliste.setSatisfaction(Nationaliste.getSatisfaction() + twoone.getEffNat());
-                                Loyaliste.setSatisfaction(Loyaliste.getSatisfaction() + twoone.getEffLoy());
-                                //les calculs
-                                // affichage résumé / impacts des calculs
-                                choicevalueScenario = true;
-                                break;
-                            default:
-                                System.out.println("Choissiez parmis les scénarios disponible.");
-                                choicevalueScenario = false;
-                        }
-
-                        break;
-                    }
+                    Capitaliste.setSatisfaction(Capitaliste.getSatisfaction() + twoone.getEffCap());
+                    Communiste.setSatisfaction(Communiste.getSatisfaction() + twotwo.getEffCom());
+                    Liberaux.setSatisfaction(Liberaux.getSatisfaction() + twoone.getEffLib());
+                    Religieux.setSatisfaction(Religieux.getSatisfaction() + twoone.getEffRel());
+                    Militariste.setSatisfaction(Militariste.getSatisfaction() + twoone.getEffMil());
+                    Ecologiste.setSatisfaction(Ecologiste.getSatisfaction() + twoone.getEffEco());
+                    Nationaliste.setSatisfaction(Nationaliste.getSatisfaction() + twoone.getEffNat());
+                    Loyaliste.setSatisfaction(Loyaliste.getSatisfaction() + twoone.getEffLoy());
+                    choicevalueScenario = true;
                 }else return false;
-                break;
+            break;
             case 7:
                 if(seven.getAlused() == 0 && (seven.getconstraint() != seas)) {
                     System.out.println("Voici le scénario qui ce présente à vous :");
@@ -1331,11 +1311,12 @@ public class Menu {
         }else return false;
     }
 
-    public static int season(int seas){
+    public static int season(int seas, String president, String country){
         Scanner scanner = new Scanner(System.in);
         if(seas == 4){
+            while(action(president, country)){}
             EndYear();
-            Miammiam();
+            Miammiam(president, country);
             scanner.nextLine();
             return 1;
         }else seas++;
@@ -1362,24 +1343,120 @@ public class Menu {
     }
 
     public static void EndYear(){
+        int naissance =0;
         System.out.println("Voilà la fin de la l'année ! vos terrains en Industrialisation vous ont permis de gagner " + (Indu.getValue()*10) + "€");
-        System.out.println("Votre agriculture a généré " + (Agri.getValue() *40) + " unités de nourriture");
+        System.out.println("Votre agriculture a généré " + (Agri.getValue() *10) + " unités de nourriture");
         Tresor.setValue(Tresor.getValue() + (Indu.getValue() * 10));
-        Food.setValue(Food.getValue() + (Agri.getValue() * 40));
+        Food.setValue(Food.getValue() + (Agri.getValue() * 10));
+        if(Agri.getValue()>Indu.getValue()) {
+            Random nbbirth = new Random();
+            float birth = nbbirth.nextInt(10 - 1);
+            System.out.println("Grâce à votre agriculture florissante, vous avez " + birth + " villageois en plus.");
+            birth = (int) birth;
+            while (birth != 0) {
+                Random nbbirth2 = new Random();
+                int birth2 = nbbirth2.nextInt(8 - 1);
+                switch (birth2) {
+                    case 1:
+                        Capitaliste.setPartisans(Capitaliste.getPartisans() + 1);
+                        break;
+                    case 2:
+                        Communiste.setPartisans(Communiste.getPartisans() + 1);
+                        break;
+                    case 3:
+                        Liberaux.setPartisans(Liberaux.getPartisans() + 1);
+                        break;
+                    case 4:
+                        Religieux.setPartisans(Religieux.getPartisans() + 1);
+                        break;
+                    case 5:
+                        Militariste.setPartisans(Militariste.getPartisans() + 1);
+                        break;
+                    case 6:
+                        Ecologiste.setPartisans(Ecologiste.getPartisans() + 1);
+                        break;
+                    case 7:
+                        Nationaliste.setPartisans(Nationaliste.getPartisans() + 1);
+                        break;
+                    case 8:
+                        Loyaliste.setPartisans(Loyaliste.getPartisans() + 1);
+                        break;
+                }
+                birth--;
+            }
+        }
     }
 
-    public static void Miammiam(){
+    public static void Miammiam(String president, String country){
+        int deadppl=0;
         int popMonde = (Capitaliste.getPartisans()+ Communiste.getPartisans()+ Liberaux.getPartisans()+
                 Religieux.getPartisans()+ Militariste.getPartisans()+ Ecologiste.getPartisans()+ Nationaliste.getPartisans()
                 + Loyaliste.getPartisans());
         System.out.println("votre population est constituée de " + popMonde+ "Personnes");
         System.out.println("Ils ont consommé 4 unités de nourriture chacun pendant l'année, ce qui fait un total de " + (popMonde*4) + " unités de nourriture.");
+        System.out.println(Food.getValue());
         Food.setValue(Food.getValue() - (4*popMonde));
+        System.out.println(Food.getValue());
+        if(Food.getValue()<0) {
+            while (Food.getValue() < 0) {
+                Food.setValue(Food.getValue() + 4);
+                deadppl++;
+            }
+            System.out.printf("A cause de la famine, vous avez perdu " + deadppl + " villageois.");
+            while (deadppl != 0) {
+                Random ddppl = new Random();
+                int dpl = ddppl.nextInt(8 - 1);
+                switch (dpl) {
+                    case 1:
+                        if(Capitaliste.getPartisans()>0) {
+                            Capitaliste.setPartisans(Capitaliste.getPartisans() - 1);
+                        }else deadppl++;
+                        break;
+                    case 2:
+                        if(Communiste.getPartisans()>0) {
+                            Communiste.setPartisans(Communiste.getPartisans() - 1);
+                        }else deadppl++;
+                        break;
+                    case 3:
+                        if(Liberaux.getPartisans()>0) {
+                            Liberaux.setPartisans(Liberaux.getPartisans() - 1);
+                        }else deadppl++;
+                        break;
+                    case 4:
+                        if(Religieux.getPartisans()>0) {
+                            Religieux.setPartisans(Religieux.getPartisans() - 1);
+                        }else deadppl++;
+                        break;
+                    case 5:
+                        if(Militariste.getPartisans()>0) {
+                            Militariste.setPartisans(Militariste.getPartisans() - 1);
+                        }else deadppl++;
+                        break;
+                    case 6:
+                        if(Ecologiste.getPartisans()>0) {
+                            Ecologiste.setPartisans(Ecologiste.getPartisans() - 1);
+                        }else deadppl++;
+                        break;
+                    case 7:
+                        if(Nationaliste.getPartisans()>0) {
+                            Nationaliste.setPartisans(Nationaliste.getPartisans() - 1);
+                        }else deadppl++;
+                        break;
+                    case 8:
+                        if(Loyaliste.getPartisans()>0) {
+                            Loyaliste.setPartisans(Loyaliste.getPartisans() - 1);
+                        }else deadppl++;
+                        break;
+                }
+                deadppl--;
+            }
+            viewUpdate(president, country);
+        }
     }
 
     public static void mainFunction(){
         Scanner scanner = new Scanner (System.in);
-        int again = 1, seasons =1, EndGame =0;
+        int seasons =1, EndGame =0;
         startMenu();
         String president = initializePresident();
         String country = initializeCountry();
@@ -1387,14 +1464,11 @@ public class Menu {
         while(loosecondition(difficulty) && EndGame <20) {
             if(randomEvents(seasons)){
                 viewUpdate(president, country);
-                while (action(president, country) && again == 1) {
-                    System.out.println("Voulez-vous faire une autre action ? Tapez 1 pour Oui, 2 pour non.");
-                    again = scanner.nextInt();
-                }
-                seasons = season(seasons);
+                seasons = season(seasons, president, country);
                 repartition();
                 EndGame++;
             }
+
         }
     }
 }
