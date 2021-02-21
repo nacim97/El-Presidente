@@ -49,9 +49,21 @@ public enum Answers {
     seventeenone("1 : vous faites appel au calme et invitez chacun des représentants à la discution autour d'une table.", 25,-15,25,15,25,-15,25,-15,0,0,0),
     seventeentwo("2 : vous faites partie de la factions militaire, vous mettez en place une dictature militaire.", -25,-25,-25,-25,30,-25,-25,-25,0,0,0),
     seventeenthree("3 : vous proposez la répartition equitable du pays en 8 factions et à chaque partie son dirigeant.", -20,25,-20,25,25,25,25,-20,0,0,0),
+
+
+
+
+
+
+
     eighteenone("1 : vous vous représentez pour un nouveau mandat.", 0,0,0,0,0,-12,0,15,0,0,0),
     eighteentwo("2 : vous prenez votre retraite politique.", 13,13,13,0,13,0,0,-12,0,0,0),
     eighteenthree("3 : vous ne comptez pas lâcher votre trône et vous auto-proclamez nouveau président.", -20,-20,-20,-20,-20,-20,-20,20,0,0,0),
+
+
+
+
+
     nineteenone("1 : vous trouvez une solution pour étouffer l'affaire et le destitué de ses fonctions.", 12,12,-14,-14,0,0,0,0,12,0,0),
     nineteentwo("2 : vous rendez l'histoire public et désignez un nouveau premier ministre.", -18,17,17,17,17,17,17,17,0,0,0),
     nineteenthree("3 : vous êtes complice, vous étouffez l'histoire.",-25,-25,-25,-25,-25,-25,-25,-25,0,0,0),
