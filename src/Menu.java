@@ -7,6 +7,7 @@ public class Menu {
 
     private static Factions Capitaliste = Factions.capitaliste;
     private static Factions Liberaux = Factions.liberaux;
+    private static Factions Communiste = Factions.communiste;
     private static Factions Religieux = Factions.religieux;
     private static Factions Militariste = Factions.militariste;
     private static Factions Ecologiste = Factions.ecologiste;
@@ -114,7 +115,6 @@ public class Menu {
         String presidentName = scanner.nextLine();
         System.out.println("Et comment s'appelle votre pays ?");
         String countryName = scanner.nextLine();
-        int money = 200;
     }
 
     public static float choiceLevel(){
@@ -187,19 +187,33 @@ public class Menu {
                     switch (valueScenario){
                         case 1 :
                             System.out.println("Choix scénario 1 : Validé.");
-                            System.out.println(Capitaliste.getSatisfaction());
                             Capitaliste.setSatisfaction(Capitaliste.getSatisfaction() + oneone.getEffCap());
-                            System.out.println(Capitaliste.getSatisfaction());
+                            Religieux.setSatisfaction(Religieux.getSatisfaction() + oneone.getEffRel());
+                            Militariste.setSatisfaction(Militariste.getSatisfaction() + oneone.getEffMil());
                             //les calculs
                             // affichage résumé / impacts des calculs
                             choicevalueScenario = true;
                             break;
                         case 2 :
                             System.out.println("Choix scénario 2 : Validé.");
+                            Communiste.setSatisfaction(Communiste.getSatisfaction() + onetwo.getEffCom());
+                            Liberaux.setSatisfaction(Liberaux.getSatisfaction() + onetwo.getEffLib());
+                            Militariste.setSatisfaction(Militariste.getSatisfaction() + onetwo.getEffMil());
+                            Nationaliste.setSatisfaction(Nationaliste.getSatisfaction() + onetwo.getEffNat());
+                            Loyaliste.setSatisfaction(Loyaliste.getSatisfaction() + onetwo.getEffLoy());
                             choicevalueScenario = true;
                             break;
                         case 3 :
                             System.out.println("Choix scénario 3 : Validé.");
+                            Capitaliste.setSatisfaction(Capitaliste.getSatisfaction() + onethree.getEffCap());
+                            Communiste.setSatisfaction(Communiste.getSatisfaction() + onethree.getEffCom());
+                            Liberaux.setSatisfaction(Liberaux.getSatisfaction() + onethree.getEffLib());
+                            Religieux.setSatisfaction(Religieux.getSatisfaction() + onethree.getEffRel());
+                            Militariste.setSatisfaction(Militariste.getSatisfaction() + onethree.getEffMil());
+                            Ecologiste.setSatisfaction(Ecologiste.getSatisfaction() + onethree.getEffEco());
+                            Nationaliste.setSatisfaction(Nationaliste.getSatisfaction() + onethree.getEffNat());
+                            Loyaliste.setSatisfaction(Loyaliste.getSatisfaction() + onethree.getEffLoy());
+
                             choicevalueScenario = true;
                             break;
                         default:
@@ -274,11 +288,28 @@ public class Menu {
 
     }
 
+    public void viewUpdate(){
+        System.out.println("Vos statistiques actuelles : ");
+        System.out.println("Capitaliste : Satisfaction = " + Capitaliste.getSatisfaction() + ", Partisans = " + Capitaliste.getPartisans());
+        System.out.println("Communiste : Satisfaction = " + Communiste.getSatisfaction() + ", Partisans = " + Communiste.getPartisans());
+        System.out.println("Libéraux : Satisfaction = " + Liberaux.getSatisfaction() + ", Partisans = " + Liberaux.getPartisans());
+        System.out.println("Religieux : Satisfaction = " + Religieux.getSatisfaction() + ", Partisans = " + Religieux.getPartisans());
+        System.out.println("Militariste : Satisfaction = " + Militariste.getSatisfaction() + ", Partisans = " + Militariste.getPartisans());
+        System.out.println("Ecologiste : Satisfaction = " + Ecologiste.getSatisfaction() + ", Partisans = " + Ecologiste.getPartisans());
+        System.out.println("Nationaliste : Satisfaction = " + Nationaliste.getSatisfaction() + ", Partisans = " + Nationaliste.getPartisans());
+        System.out.println("Loyaliste : Satisfaction = " + Loyaliste.getSatisfaction() + ", Partisans = " + Loyaliste.getPartisans());
+
+        System.out.println("L'Agriculture représente " );
+    }
+
     public static void mainFunction(){
 
         startMenu();
         initializeCountry();
         float difficulty = choiceLevel();
         randomEvents();
+
+        System.out.println("");
+
     }
 }

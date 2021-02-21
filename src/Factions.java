@@ -6,7 +6,7 @@ public class Factions {
     private int satisfaction;
     private int partisans;
     public static Factions capitaliste = new Factions("Capitaliste",50, 15);
-    public static Factions commmmuniste = new Factions("Commmmuniste",50, 15);
+    public static Factions communiste = new Factions("Communiste",50, 15);
     public static Factions liberaux = new Factions("Libéraux",50, 15);
     public static Factions religieux = new Factions("Religieux",50, 15);
     public static Factions militariste = new Factions("Militariste",50, 15);
