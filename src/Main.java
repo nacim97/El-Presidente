@@ -1,6 +1,5 @@
 package src;
 
-import java.lang.reflect.Parameter;
 import java.util.Scanner;
 
 public class Main {
@@ -21,7 +20,6 @@ public class Main {
                     Menu.getdown();
                     EndGame++;
                 }
-
             }
     }
 }

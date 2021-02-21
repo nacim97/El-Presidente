@@ -1,6 +1,5 @@
 package src;
 
-import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -125,6 +124,7 @@ public class Menu {
         if (help == 1) {
             helpGame();
         } else {
+
             System.out.println("Bonne partie et bonne chance !");
         }
     }
@@ -156,7 +156,7 @@ public class Menu {
         System.out.println("Facile = 10% \nMoyen = 25%\nDifficile = 50%\n");
 
         System.out.println("----------------------------------------------------------------------Initialisation de la partie-------------------------------------------------------------------\n");
-        System.out.println("Vous commencerez avec ces statiques de base : \n");
+        System.out.println("Vous commencerez avec ces statistiques de base : \n");
         System.out.print("Capitaliste : Satisfaction = " + Capitaliste.getSatisfaction() + ", Partisans = " + Capitaliste.getPartisans());
         System.out.println(" || Communiste : Satisfaction = " + Communiste.getSatisfaction() + ", Partisans = " + Communiste.getPartisans());
         System.out.print("Libéraux : Satisfaction = " + Liberaux.getSatisfaction() + ", Partisans = " + Liberaux.getPartisans());
@@ -1686,6 +1686,4 @@ public class Menu {
             Tresor.setValue(0);
         }
     }
-
-
 }

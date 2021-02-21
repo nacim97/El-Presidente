@@ -86,6 +86,7 @@ public enum Answers {
         this.EffIndu = EffIndu;
         this.EffAgri = EffAgri;
     }
+
     public String getText(){return this.text;}
     public int getEffCap(){return this.EffCap;}
     public int getEffCom(){return this.EffCom;}

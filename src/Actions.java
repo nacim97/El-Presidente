@@ -22,7 +22,6 @@ public class Actions {
     public static Actions goldNationaliste = new Actions("Pot de vin : Nationaliste",15,0,0,0,0,0,0,10,0,0);
     public static Actions foodMarket = new Actions ("Acheter une unité de nourriture",8,0,0,0,0,0,0,0,0,1);
 
-
     public Actions(String name, float amount, int effCap, int effCom, int effLib, int effRel, int effMil, int effEco, int effNat, int effLoy, int EffFood) {
         this.name = name;
         this.amount = amount;

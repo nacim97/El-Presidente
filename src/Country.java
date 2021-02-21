@@ -6,8 +6,8 @@ public class Country {
 
     public static Country Indu = new Country("Industrialisation", 15);
     public static Country Agri = new Country("Agriculture" , 15);
-    public static Country Tresor = new Country ("Trésorerie", 200);
-    public static Country Food = new Country ("Nourriture" , 0);
+    public static Country Tresor = new Country ("Trésorerie", 2000);
+    public static Country Food = new Country ("Nourriture" , 600);
 
     public Country(String name, int value){
         this.name = name;
