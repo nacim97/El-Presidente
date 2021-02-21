@@ -277,6 +277,7 @@ public class Menu {
                     switch (valueScenario){
                         case 1 :
                             System.out.println("Choix scénario 1 : Validé.");
+                            capitaliste.setSatisfaction(capitaliste.getSatisfaction() +1);
                             //les calculs
                             // affichage résumé / impacts des calculs
                             choicevalueScenario = true;
