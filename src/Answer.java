@@ -28,4 +28,6 @@ public class Answer extends Event{
         this.EffIndu = effIndu;
         this.EffAgri = effAgri;
     }
+
+
 }

@@ -27,7 +27,7 @@ public class Main {
         Actions foodMarket = new Actions ("Acheter une unité de nourriture",8,0,0,0,0,0,0,0,0,1);
 
         //add Event
-        Event one = new Event("Des extra-terrestes apparaissent et prennent contact, ils souhaitent s'adresser au chef terrien :", 0);
+        /*Event one = new Event("Des extra-terrestes apparaissent et prennent contact, ils souhaitent s'adresser au chef terrien :", 0);
         Event two = new Event("Des hackers ont piraté des secrets d'état et réclament une rançon de 250 millions d'euro :", 0);
         Event three = new Event("Une pandémie touche mondialement :", 1);
         Event four = new Event("Une nouvelle source d'énergie verte illimité est découverte :", 0);
@@ -46,10 +46,10 @@ public class Main {
         Event seventeen = new Event("Une guerre religieuse naît entre les 8 différentes factions présente au sein du pays :", 0);
         Event eighteen = new Event("Les nouvelles élections présidentielles approchent :", 0);
         Event nineteen = new Event("Votre premier ministre est accusé de détournement de fond public, le peuple n'a pas encore écho de cette information :", 0);
-        Event twenty = new Event("Votre pays est sélectionné pour organiser les prochains Jeux Olympiques :", 0);
+        Event twenty = new Event("Votre pays est sélectionné pour organiser les prochains Jeux Olympiques :", 0);*/
 
         //add Answer
-        Answer oneA = new Answer("A : Aucun discution possible, vous ordonnez l'armez d'abattre les ennemies.",10,0,0,-10,-10,0,0,0,0,0,0);
+        /*Answer oneA = new Answer("A : Aucun discution possible, vous ordonnez l'armez d'abattre les ennemies.",10,0,0,-10,-10,0,0,0,0,0,0);
         Answer oneB = new Answer("B : Vous répondez à leurs appels et faites en sorte de mettre en place un traité de pays.",0,10,10,0,-10,0,-10,10,0,0,0);
         Answer oneC = new Answer("C : Vous temporisez et laissez les visiteurs dans l'attente.",-10,-10,-10,-10,-10,-10,-10,-10,0,0,0);
         Answer twoA = new Answer("A : Vous mettez en place une équipe de hacker qui a pour mission de contrer l'ennemi (l'ennemi est mis hors d'état de nuire).", 10,10,10,10,10,10,10,10,0,0,0);
@@ -105,7 +105,7 @@ public class Main {
         Answer nineteenC = new Answer("C : vous êtes complice, vous étouffez l'histoire.",-25,-25,-25,-25,-25,-25,-25,-25,0,0,0);
         Answer twentyA = new Answer("A : vous acceptez la responsabilité malgrès les immenses investissements.", 15,0,15,0,0,-25,0,25,0,0,0);
         Answer twentyB = new Answer("B : vous refusez car l'état économique du pays ne permet pas ce genre d'investissement.", -15,13,0,0,13,0,0,15,0,0,0);
-        Answer twentyC = new Answer("C : vous acceptez et mettez en place un plan économique avec votre équipe d'expert pour prendre le risque de ressortir des bénéfices de cet évènement.", 12,0,0,12,0,-15,0,0,0,0,0);
+        Answer twentyC = new Answer("C : vous acceptez et mettez en place un plan économique avec votre équipe d'expert pour prendre le risque de ressortir des bénéfices de cet évènement.", 12,0,0,12,0,-15,0,0,0,0,0);*/
 
         //add Supporters
         Supporters suppCapitaliste = new Supporters("Capitaliste",15);

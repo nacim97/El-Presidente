@@ -14,4 +14,28 @@ public class Factions {
 
     public Factions(String name, int satisfaction) {
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getSatisfaction() {
+        return satisfaction;
+    }
+
+    public void setSatisfaction(int satisfaction) {
+        this.satisfaction = satisfaction;
+    }
+
+    public int getPartisans() {
+        return partisans;
+    }
+
+    public void setPartisans(int partisans) {
+        this.partisans = partisans;
+    }
 }
