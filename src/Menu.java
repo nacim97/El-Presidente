@@ -4,18 +4,19 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Menu {
+
     //add factions
-    Factions capitaliste = new Factions("Capitaliste",50, 15);
-    Factions commmmuniste = new Factions("Commmmuniste",50, 15);
-    Factions liberaux = new Factions("Libéraux",50, 15);
-    Factions religieux = new Factions("Religieux",50, 15);
-    Factions militariste = new Factions("Militariste",50, 15);
-    Factions ecologiste = new Factions("Ecologiste",50, 15);
-    Factions nationaliste = new Factions("Nationaliste",50, 15);
-    Factions loyaliste = new Factions("Loyaliste",100, 15);
+    //
+    private static Factions Capitaliste = Factions.capitaliste;
+    private static Factions Liberaux = Factions.liberaux;
+    private static Factions Religieux = Factions.religieux;
+    private static Factions Militariste = Factions.militariste;
+    private static Factions Ecologiste = Factions.ecologiste;
+    private static Factions Nationaliste = Factions.nationaliste;
+    private static Factions Loyaliste = Factions.loyaliste;
 
     //add actions
-    Actions goldCapitaliste = new Actions("Pot de vin : Capitaliste",15,10,0,0,0,0,0,0,0.1f,0);
+   /* Actions goldCapitaliste = new Actions("Pot de vin : Capitaliste",15,10,0,0,0,0,0,0,0.1f,0);
     Actions goldCommuniste = new Actions("Pot de vin : Communiste",15,0,10,0,0,0,0,0,0.1f,0);
     Actions goldLiberaux = new Actions("Pot de vin : Liberaux",15,0,0,10,0,0,0,0,0.1f,0);
     Actions goldReligieux = new Actions("Pot de vin : Religieux",15,0,0,0,10,0,0,0,0.1f,0);
@@ -23,7 +24,7 @@ public class Menu {
     Actions goldEcologiste = new Actions("Pot de vin : Ecologiste",15,0,0,0,0,0,10,0,0.1f,0);
     Actions goldNationaliste = new Actions("Pot de vin : Nationaliste",15,0,0,0,0,0,0,10,0.1f,0);
     Actions foodMarket = new Actions ("Acheter une unité de nourriture",8,0,0,0,0,0,0,0,0,1);
-
+*/
     //add Event
         /*Event one = new Event("Des extra-terrestes apparaissent et prennent contact, ils souhaitent s'adresser au chef terrien :", 0);
         Event two = new Event("Des hackers ont piraté des secrets d'état et réclament une rançon de 250 millions d'euro :", 0);
@@ -277,7 +278,9 @@ public class Menu {
                     switch (valueScenario){
                         case 1 :
                             System.out.println("Choix scénario 1 : Validé.");
-                            capitaliste.setSatisfaction(capitaliste.getSatisfaction() +1);
+                            System.out.println(Capitaliste.getSatisfaction());
+                            Capitaliste.setSatisfaction(Capitaliste.getSatisfaction() + oneone.getEffCap());
+                            System.out.println(Capitaliste.getSatisfaction());
                             //les calculs
                             // affichage résumé / impacts des calculs
                             choicevalueScenario = true;

@@ -11,10 +11,10 @@ public class Actions {
     private int EffMil;
     private int EffEco;
     private int EffNat;
-    private float EffLoy;
+    private int EffLoy;
     private int EffFood;
 
-    public Actions(String name, float amount, int effCap, int effCom, int effLib, int effRel, int effMil, int effEco, int effNat, float effLoy, int EffFood) {
+    public Actions(String name, float amount, int effCap, int effCom, int effLib, int effRel, int effMil, int effEco, int effNat, int effLoy, int EffFood) {
         this.name = name;
         this.amount = amount;
         this.EffCap = effCap;
