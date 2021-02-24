@@ -965,6 +965,7 @@ public class Menu implements Cloneable {
         int i = 1;
         for (Factions faction : this.factions) {
             System.out.println(i + ". " + faction.getName() + ". (" + (faction.getPartisans() * 15) + "€)");
+            i++;
         }
         System.out.println("0. Retour");
     }
@@ -994,7 +995,7 @@ public class Menu implements Cloneable {
                         this.factions.get(choice - 1).setSatisfaction(this.factions.get(choice - 1).getSatisfaction() + 10);
                         tresor.setValue(tresor.getValue() - valueTresor);
                         this.factions.get(choice - 1).setSatisfaction(this.factions.get(choice - 1).getSatisfaction() - (valueTresor / 10));
-                        System.out.println("Pot de vin versé aux " + this.factions.get(choice - 1).getName() + ".\n" + "Satisfaction des " + this.factions.get(choice - 1) + ": " + this.factions.get(choice - 1).getSatisfaction() + ", cela vous a coûter  " + valueTresor + "€.");
+                        System.out.println("Pot de vin versé aux " + this.factions.get(choice - 1).getName() + ".\n" + "Satisfaction des " + this.factions.get(choice - 1).getName() + ": " + this.factions.get(choice - 1).getSatisfaction() + ", cela vous a coûter  " + valueTresor + "€.");
                         System.out.println("Loyaliste satisfaction :" + this.factions.get(choice - 1).getSatisfaction());
                     } else {
                         System.out.println("Vous n'avez pas assez d'argent");
