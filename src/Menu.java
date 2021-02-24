@@ -161,10 +161,7 @@ public class Menu {
         for(Factions faction : this.factions){
             faction.setSatisfaction(faction.getSatisfaction() + answers.getEffCap());
         }
-
     }
-
-
 
     public void viewUpdate(String president, String country){
         Scanner scanner = new Scanner(System.in);
@@ -430,7 +427,6 @@ public class Menu {
     }
 
     public void checkValueSat(){
-
         for (Factions faction : this.factions){
             if(faction.getSatisfaction() > 100){
                 faction.setSatisfaction(100);
@@ -438,10 +434,10 @@ public class Menu {
         }
     }
 
-    public static void checkMoneyValue(){
+   /*public static void checkMoneyValue(){
         if(Tresor.getValue() < 0){
             System.out.println("Vous n'avez plus de monnaie dans votre trésorie ");
             Tresor.setValue(0);
         }
-    }
+    }*/
 }
