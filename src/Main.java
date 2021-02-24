@@ -16,7 +16,7 @@ public class Main {
         String country = menu.initializeCountry();
         float difficulty = menu.choiceLevel();
         while(menu.loosecondition(difficulty) && EndGame <20) {
-            if(menu.randomEvents(seasons)){
+            if(menuEvents.randomEvents(seasons)){
                 menu.checkValueSat();
                 menu.viewUpdate(president, country);
                 seasons = menu.season(seasons, president, country);
