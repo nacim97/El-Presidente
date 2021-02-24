@@ -1,18 +1,25 @@
 package src;
 
-public class Factions {
+import java.lang.Object;
 
-    private String name;
-    private int satisfaction;
+public class Factions implements Cloneable {
+
+    String name;
+    int satisfaction;
     private int partisans;
     private int down;
 
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 
     public Factions(String name, int satisfaction, int partisans, int down) {
         this.name = name;
         this.satisfaction = satisfaction;
         this.partisans = partisans;
         this.down = down;
+
+
     }
 
     public String getName() {
@@ -38,8 +45,12 @@ public class Factions {
     public void setPartisans(int partisans) {
         this.partisans = partisans;
     }
-    public int getDown(){return down;}
-    public void setDown(int down){
+
+    public int getDown() {
+        return down;
+    }
+
+    public void setDown(int down) {
         this.down = down;
     }
 }

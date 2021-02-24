@@ -1,5 +1,8 @@
 package src;
 
+import java.lang.Object;
+
+
 public enum Events {
     ONE("Des extra-terrestes apparaissent et prennent contact, ils souhaitent s'adresser au chef terrien :", 0, 0),
     TWO("Des hackers ont piraté des secrets d'état et réclament une rançon de 250 millions d'euro :", 0, 0),
@@ -22,15 +25,25 @@ public enum Events {
     NINETEEN("Votre premier ministre est accusé de détournement de fond public, le peuple n'a pas encore écho de cette information :", 0, 0),
     TWENTY("Votre pays est sélectionné pour organiser les prochains Jeux Olympiques :", 0, 0);
 
-    private final String Specs;
+    private String Specs;
     private final int constraint;
-    private int alused;
-    Events(String Specs, int constraint, int alused){
+    private final int alused;
+
+    Events(String Specs, int constraint, int alused) {
         this.Specs = Specs;
         this.constraint = constraint;
         this.alused = alused;
     }
-    public String getSpecs(){return this.Specs;}
-    public int getconstraint(){return this.constraint;}
-    public int getAlused(){return this.alused;}
+
+    public String getSpecs() {
+        return this.Specs;
+    }
+
+    public int getconstraint() {
+        return this.constraint;
+    }
+
+    public int getAlused() {
+        return this.alused;
+    }
 }
